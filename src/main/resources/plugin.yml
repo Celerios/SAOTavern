@@ -1,0 +1,8 @@
+name: SAOTavern
+version: 1.0.0
+main: net.haru.SAOTavern
+api-version: 1.20
+commands:
+  tavern:
+    description: Gestion des tavernes
+    usage: /tavern <create/delete/manage> [<name>]

@@ -1,0 +1,35 @@
+plugins {
+    id 'java'
+}
+
+group = 'net.haru'
+version = '1.0-SNAPSHOT'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        name = 'spigot-repo'
+        url = uri('https://hub.spigotmc.org/nexus/content/repositories/snapshots/')
+    }
+    maven {
+        name = 'essentials-releases'
+        url = uri('https://repo.essentialsx.net/releases/')
+    }
+    maven {
+        name = 'paper-repo'
+        url = uri("https://repo.papermc.io/repository/maven-public/")
+    }
+}
+
+dependencies {
+    compileOnly('org.spigotmc:spigot-api:1.20.4-R0.1-SNAPSHOT')
+    compileOnly('net.essentialsx:EssentialsX:2.20.1')
+    runtimeOnly("io.papermc:paperlib:1.0.6")
+    implementation 'com.google.code.gson:gson:2.10.1'
+}
